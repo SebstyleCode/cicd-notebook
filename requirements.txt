@@ -2,6 +2,5 @@
 pandas==2.2.2
 scikit-learn==1.4.2
 black
-cml
 huggingface_hub[cli]
 gradio
