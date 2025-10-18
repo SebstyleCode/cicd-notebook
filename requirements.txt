@@ -1,0 +1,6 @@
+pandas
+scikit-learn
+black
+cml
+huggingface_hub[cli]
+gradio
