@@ -13,6 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: iterative/setup-cml@v2
+      
+      # ESTE ES EL NUEVO PASO AÑADIDO PARA SOLUCIONAR EL ERROR
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+      
+      # El resto del flujo continúa desde aquí
       - name: Install Packages
         run: make install
       - name: Format
@@ -27,4 +33,4 @@ jobs:
         env:
           NAME: ${{ secrets.USER_NAME }}
           EMAIL: ${{ secrets.USER_EMAIL }}
-        run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL
+        run: make update-branch USER_NAME=$NAME USER_EMAIL=$EMAIL```
